@@ -1,21 +1,30 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableWithoutFeedback } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableWithoutFeedback,
+  Animated
+} from "react-native";
 
 import Star from "./src/Star";
 
 const numStars = 5;
 
 export default class App extends Component {
+  state = {
+    rating: 2
+  };
   render() {
     let stars = [];
-
-    for (let x = 1; x <= numStars; x++) {
+    for (let x = 1; x <= numStars; x++)
       stars.push(
-        <TouchableWithoutFeedback>
-          <Star />
+        <TouchableWithoutFeedback key={x}>
+          <Animated.View>
+            <Star />
+          </Animated.View>
         </TouchableWithoutFeedback>
       );
-    }
     return (
       <View style={styles.container}>
         <View style={{ flexDirection: "row" }}>{stars}</View>

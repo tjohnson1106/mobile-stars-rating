@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { FontAwesome } from "@expo/vector-icons";
 
 class Star extends Component {
-  state = {};
   render() {
     return (
       <FontAwesome
